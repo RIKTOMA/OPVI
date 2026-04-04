@@ -853,6 +853,7 @@ def test(iters,N,V,seed,epsilon=10**-6,MAXTIME=120,aIRG=False):
     values={}
     stampacchia={}
     names=["Real","KaYo","SaYo"]
+    np.random.seed(seed)
     for name in names:
         tempi[name]={}
         values[name]={}
