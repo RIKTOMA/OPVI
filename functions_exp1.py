@@ -368,6 +368,7 @@ def esp(n,k,L,vincolo,param_C,iters,epsilon,rho,alpha,normb,seed=0):
     np.random.seed(seed)
     risultati=np.zeros((iters,7))
     for it in range(iters):
+        print("instance",it+1)
         #Genero f quadratica
         x_rand=np.random.random_sample(n,)*10-5
         Af=random_sA(n,np.random.random_sample((n,))*10)
