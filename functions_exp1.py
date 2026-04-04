@@ -40,6 +40,7 @@ def alg_real(f_esterna,G_interna,y0,param_f=[],param_G=[],vincolo="cubo",param_C
     #Funzione Gap Stampacchia sul cubo [0,1]^n
     def gapS(z,F,n):
         ms=gp.Model("stampacchia")
+        ms.setParam("OutPutFlag",0)
         ms.Params.LogToConsole = 0
         y=ms.addMVar(shape=n,lb=-100, name="y")
         if vincolo=="cubo":
@@ -132,6 +133,7 @@ def alg_real(f_esterna,G_interna,y0,param_f=[],param_G=[],vincolo="cubo",param_C
     
     #creo modello
     m=gp.Model("prob_penalizzato")
+    m.setParam("OutPutFlag",0)
     m.Params.LogToConsole = 0
 
     #definisco le variabili
