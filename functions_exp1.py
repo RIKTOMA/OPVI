@@ -147,6 +147,8 @@ def alg_real(f_esterna,G_interna,y0,param_f=[],param_G=[],vincolo="cubo",param_C
             m.addConstr(x[i]>=vl, "b"+str(i))
     if vincolo=="sfera":
         m.addConstr(x@x<=R, "s")
+        m.setParam("BarHomogeneous",1)
+        m.setParam("BarIterLimit",10000)
     if vincolo=="simplesso":
         m.addConstr(x>=0, "s1")
         m.addConstr(np.ones(n).T@x<=tot, "s2")
