@@ -960,6 +960,7 @@ def time_plot(Res,iters):
     times=np.zeros([2,iters])
     stamp=np.zeros([2,iters])
     values=np.zeros([2,iters])
+    solved=np.zeros([2,iters])
     for i in range(iters):
         times[0,i]=Res[0]["Real"][i]
         times[1,i]=Res[0]["SaYo"][i]
@@ -968,11 +969,16 @@ def time_plot(Res,iters):
         values[0,i]=Res[2]["Real"][i]
         values[1,i]=Res[2]["SaYo"][i]
 
+    solved=np.zeros([2,iters])
+    print("Solved instances Alg3/IREG")
+    print(np.sum(stamp[0]<=0.01),np.sum(stamp[1]<=0.01))
+    
     print("Median time for Alg3/IREG")
     print(np.median(times,1))
     
     print("Mean time for Alg3/IREG")
     print(np.mean(times,1))
+    
     print("Max time for Alg3/IREG")
     print(np.max(times,1))
     
